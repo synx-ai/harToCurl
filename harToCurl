@@ -6,16 +6,30 @@ import urllib
 
 f = open(sys.argv[1])
 data = json.load(f)
-opts = {}
-opts['url'] = data['request']['url']
-opts['cookies'] = urllib.urlencode([(cookie['name'], cookie['value']) for cookie in data['request']['cookies']])
-opts['http0'] = '-0' if data['request']['httpVersion'] == 'HTTP/1.0' else ''
-opts['method'] = data['request']['method']
-opts['headers'] = ' '.join(['-H "' + x['name'] + ': ' + x['value'] + '"' for x in data['request']['headers']])
-if 'postData' in data['request']:
-    opts['postData'] = data['request']['postData']['text']
-else:
-    opts['postData'] = ''
 
-print 'curl -X {method} {http0} -b "{cookies}" {headers} -d "{postData}" {url}'.format(**opts)
+for entry in data['log']['entries']:
+    request = entry['request']
 
+    opts = {}
+    opts['url'] = request['url']
+    opts['cookies'] = urllib.urlencode([(cookie['name'], cookie['value'])
+                                        for cookie in request['cookies']])
+
+    httpVersions = {
+        'HTTP/1.0': '--http1.0',
+        'HTTP/1.1': '--http1.1',
+        'HTTP/2.0': '--http2',
+    }
+
+    opts['httpVersion'] = httpVersions.get(request['httpVersion'].upper(), '')
+
+    opts['method'] = request['method']
+    opts['headers'] = ' '.join(['-H \'' + x['name'] + ': ' + x['value'] + '\''
+                                for x in request['headers']])
+    if 'postData' in request:
+        opts['postData'] = request['postData']['text']
+    else:
+        opts['postData'] = ''
+
+    print('curl -X {method} {httpVersion} -b \'{cookies}\' {headers} '
+          '-d \'{postData}\' {url}'.format(**opts))
