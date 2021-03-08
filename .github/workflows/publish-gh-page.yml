@@ -17,8 +17,8 @@ jobs:
 
     - name: 🧬 Clone template 
       uses: actions/checkout@master
-        with:
-          name: synx-ai/gh-pages-template 
+      with:
+        repository: synx-ai/gh-pages-template 
 
     - name: ⚙️ Install dependencies
       working-directory: ${{env.template-dir}}
@@ -35,6 +35,6 @@ jobs:
     - name: 🚀 Deploy
       working-directory: ${{env.template-dir}}
       uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
