@@ -12,10 +12,6 @@ jobs:
       template-dir: ./gh-pages-template 
       
     steps:
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-        
     - uses: actions/checkout@master
 
     - uses: actions/checkout@master
@@ -25,8 +21,12 @@ jobs:
 
     - name: ⚙️ Install dependencies
       working-directory: ${{env.template-dir}}
-      run: npm ci
+      run: yarn install
 
     - name: 🧪 Test
       working-directory: ${{env.template-dir}}
-      run: npm run test --if-present
+      run: yarn test
+      
+    - name: Build
+      working-directory: ${{env.template-dir}}
+      run: yarn build
