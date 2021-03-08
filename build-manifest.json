@@ -138,7 +138,7 @@
       ]
     },
     "dist/README.js": {
-      "bytes": 857,
+      "bytes": 1954,
       "imports": [
         {
           "path": "_snowpack/pkg/react.js",
@@ -247,7 +247,7 @@
           "bytesInOutput": 438
         },
         "dist/README.js": {
-          "bytesInOutput": 456
+          "bytesInOutput": 1422
         },
         "dist/assets/styles.css": {
           "bytesInOutput": 0
@@ -256,7 +256,7 @@
           "bytesInOutput": 320
         }
       },
-      "bytes": 202570
+      "bytes": 203536
     },
     "../gh-pages-template/~~bundle~~/dist/index.css": {
       "imports": [],
