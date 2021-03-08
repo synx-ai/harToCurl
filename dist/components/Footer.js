@@ -1,8 +1,4 @@
 import React from "../../_snowpack/pkg/react.js";
-import synx from "../assets/img/synx-logo.svg.proxy.js";
-import imgCC from "../assets/img/creative-commons/cc.svg.proxy.js";
-import imgBy from "../assets/img/creative-commons/by.svg.proxy.js";
-import imgRemix from "../assets/img/creative-commons/remix.svg.proxy.js";
 import { jsx as _jsx } from "../../_snowpack/pkg/react/jsx-runtime.js";
 import { jsxs as _jsxs } from "../../_snowpack/pkg/react/jsx-runtime.js";
 export const Footer = () => {
@@ -18,7 +14,7 @@ export const Footer = () => {
               href: "https://synx.ai",
               target: "_blank",
               children: /*#__PURE__*/_jsx("img", {
-                src: synx,
+                src: "assets/img/synx-logo.svg",
                 className: "footer-logo"
               })
             }), /*#__PURE__*/_jsxs("p", {
@@ -41,7 +37,7 @@ export const Footer = () => {
             children: [/*#__PURE__*/_jsxs("div", {
               className: "tooltip",
               children: [/*#__PURE__*/_jsx("img", {
-                src: imgCC,
+                src: "assets/img/creative-commons/cc.svg",
                 className: "cc-logo"
               }), /*#__PURE__*/_jsx("span", {
                 className: "tooltiptext",
@@ -50,7 +46,7 @@ export const Footer = () => {
             }), /*#__PURE__*/_jsxs("div", {
               className: "tooltip",
               children: [/*#__PURE__*/_jsx("img", {
-                src: imgBy,
+                src: "assets/img/creative-commons/by.svg",
                 className: "cc-logo"
               }), /*#__PURE__*/_jsx("span", {
                 className: "tooltiptext",
@@ -59,7 +55,7 @@ export const Footer = () => {
             }), /*#__PURE__*/_jsxs("div", {
               className: "tooltip",
               children: [/*#__PURE__*/_jsx("img", {
-                src: imgRemix,
+                src: "assets/img/creative-commons/remix.svg",
                 className: "cc-logo"
               }), /*#__PURE__*/_jsx("span", {
                 className: "tooltiptext",

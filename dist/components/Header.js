@@ -1,6 +1,4 @@
 import React from "../../_snowpack/pkg/react.js";
-import synx from "../assets/img/synx-logo.svg.proxy.js";
-import github from "../assets/img/github.svg.proxy.js";
 import { jsx as _jsx } from "../../_snowpack/pkg/react/jsx-runtime.js";
 import { jsxs as _jsxs } from "../../_snowpack/pkg/react/jsx-runtime.js";
 export const Header = () => {
@@ -16,7 +14,7 @@ export const Header = () => {
               href: "https://synx.ai",
               target: "_blank",
               children: /*#__PURE__*/_jsx("img", {
-                src: synx,
+                src: "assets/img/synx-logo.svg",
                 className: "logo"
               })
             })
@@ -26,7 +24,7 @@ export const Header = () => {
               href: "https://synx.ai",
               target: "_blank",
               children: /*#__PURE__*/_jsx("img", {
-                src: github,
+                src: "assets/img/github.svg",
                 className: "github"
               })
             })
