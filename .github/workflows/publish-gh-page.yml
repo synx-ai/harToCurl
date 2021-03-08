@@ -9,15 +9,24 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     env:
-      template-dir: ./sh-pages-template 
+      template-dir: ./gh-pages-template 
       
     steps:
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        
     - uses: actions/checkout@master
 
     - uses: actions/checkout@master
       with:
         repository: synx-ai/gh-pages-template 
+        path: ${{env.template-dir}}
 
     - name: ⚙️ Install dependencies
       working-directory: ${{env.template-dir}}
       run: npm ci
+
+    - name: 🧪 Test
+      working-directory: ${{env.template-dir}}
+      run: npm run test --if-present
