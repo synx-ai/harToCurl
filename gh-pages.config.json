@@ -1,5 +1,5 @@
 {
   "name": "CURL from HAR file.",
   "description": "Deprecated script to create a CURL call based on a HAR file.",
-  "baseUrl": "hartocurl"
+  "baseUrl": "/"
 }
