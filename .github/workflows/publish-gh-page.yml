@@ -19,6 +19,12 @@ jobs:
         repository: synx-ai/gh-pages-template 
         path: ${{env.template-dir}}
 
+    - name: 🧬 Readme.md cloning
+      uses: canastro/copy-file-action@master
+      with:
+        source: "readme.md"
+        target: "gh-pages-template/src/readme.md"
+        
     - name: ⚙️ Install dependencies
       working-directory: ${{env.template-dir}}
       run: yarn install
