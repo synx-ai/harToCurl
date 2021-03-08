@@ -23,7 +23,7 @@ jobs:
       uses: canastro/copy-file-action@master
       with:
         source: "readme.md"
-        target: "gh-pages-template/src/readme.md"
+        target: "gh-pages-template/src/README.md"
         
     - name: ⚙️ Install dependencies
       working-directory: ${{env.template-dir}}
